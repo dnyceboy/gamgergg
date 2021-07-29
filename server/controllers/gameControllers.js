@@ -41,5 +41,24 @@ gameController.createGame = async (req, res, next) => {
   
 }
 
+gameController.getGameById = async (req, res, next) =>{
+  try {
+    const { id } = req.params;
+    // console.log(req.params);
+    const params = [ id ];
+    const query = `SELECT * FROM games WHERE id = $1`;
+
+    const result = await db.query(query, params);
+    // console.log(result.rows);
+    res.locals.gameInfo = result.rows[0];
+    next();
+  } catch (err) {
+    next({
+      log: `gameController.getGameById: ${err}`,
+      message: {err: 'Error occurred in gameController.getGameById. Check server terminal'},
+    })
+  }
+}
+
 
 module.exports = gameController;

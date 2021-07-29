@@ -30,14 +30,14 @@ function GameContainer(props){
 
   //gamename picture_url
 
-  const gameItemArray = games.map(game => <GameItem key={Math.floor(Math.random() * 1000000)} name={game.gamename} pic={game.picture_url}  /> )
+  const gameItemArray = games.map(game => <GameItem key={Math.floor(Math.random() * 1000000)} id={game.id} name={game.gamename} pic={game.picture_url}  /> )
   // const testGridArray = [...gameItemArray, ...gameItemArray, ...gameItemArray, ...gameItemArray, ...gameItemArray, ...gameItemArray, ...gameItemArray, ...gameItemArray, ...gameItemArray, ...gameItemArray,]
     
   return (
     <div className='mainSection'>
       <div className="header">
         <h2>Games</h2>
-        <Link to={'/api/create/'} >
+        <Link to={'/create'} >
           <button>Create Game</button>
         </Link>
       </div>

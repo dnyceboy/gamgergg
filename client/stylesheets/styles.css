@@ -49,3 +49,54 @@ body {
   margin: 10px;
   width: 40%;
 }
+
+/* grid-img grid-release grid-platforms grid-summary grid-name "grid-comment */
+
+#grid-img {
+  grid-area: img;
+}
+
+#grid-img img{
+  width: 30em;
+  height: 30em;
+}
+#grid-release {
+  grid-area: release;
+}
+#grid-platforms {
+  grid-area: platforms;
+}
+#grid-summary {
+  grid-area: summary;
+}
+
+#grid-summary p {
+  width: 30em;
+}
+
+#grid-name {
+  grid-area: name;
+}
+#grid-comment {
+  grid-area: comment;
+}
+
+#grid-comment textarea {
+  width: 100em;
+}
+
+.gameInfoDisplay {
+  display: grid;
+  grid-template: auto / repeat(auto-fill, 1fr);
+  grid-template-areas: 
+      'name name name name'
+      'img img summary summary'
+      'img img release platforms'
+      'comment comment comment comment';
+  gap: 20px;
+}
+
+.gameInfoMainContainer {
+  
+  text-align: center;
+}

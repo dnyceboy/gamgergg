@@ -4,6 +4,7 @@ const gameControllers = require('./controllers/gameControllers');
 const app = express();
 const PORT = 3000;
 const apiRouter = require('./routes/api');
+const gameInfoRouter = require('./routes/gameInfoRouter');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -14,6 +15,7 @@ app.get('/', gameControllers.getGames, (req, res) => {
 });
 
 app.use('/api', apiRouter);
+app.use('/gameinfo', gameInfoRouter);
 
 app.use('*', (req, res) => {
   res.status(404).send('This url does not exist');
