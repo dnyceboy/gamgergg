@@ -10,14 +10,14 @@ module.exports = {
   },
   mode: process.env.NODE_ENV,
   devServer: {
-    // host: 'localhost',
-    // contentBase: path.resolve(__dirname, 'build'),
+    historyApiFallback: true,
     publicPath: '/build/',
     // compress: true,
     port: 8080,
     proxy: {
-      '/api': 'http://localhost:3000',
-    }
+      '/api/': 'http://localhost:3000',
+    },
+    hot: true,
   },
   module: {
     rules: [
@@ -35,7 +35,7 @@ module.exports = {
       {
         test: /.(css|scss)$/,
         // exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', "sass-loader"],
+        use: ['style-loader', 'css-loader'],
       }
     ],
   },

@@ -1,0 +1,51 @@
+body {
+  background-color: whitesmoke;
+
+}
+
+.gamesDiv {
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
+  text-align: center;
+  border: black;
+  gap: 20px;
+
+}
+
+.gameItemBox {
+  border: 2px solid black;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.gameItemPic {
+  width: 15em;
+  height: 15em;
+  display: block;
+}
+
+.gameCreator {
+  display: table;
+  text-align: center;
+  margin: auto;
+  height: 100%;
+  background-color: white;
+  border: 2px solid blue;
+}
+
+.gameCreatorField {
+  margin: 2em;
+}
+
+.btn {
+  padding: 10px;
+  margin: 10px;
+  width: 40%;
+}

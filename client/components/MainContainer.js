@@ -8,7 +8,7 @@ function MainContainer(){
     <div className='router'>
       <Switch>
         <Route exact path='/' component={GameContainer} />
-        <Route exact path='/create' component={CreateGame} />
+        <Route exact path='/api/create' component={CreateGame} />
       </Switch>
     </div>
   )
